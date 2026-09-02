@@ -1,4 +1,6 @@
-// SENSEKI SCAN ラリー解析ライブラリ（ブラウザ用・依存なし）
+// SENSEKI SCAN ラリー解析ライブラリ（ブラウザ用・依存なし）— アプリ同梱版
+// 原本は tools/rally.js（ラボ用）。アプリの build.files は renderer/** だけを同梱するためここに複製している。
+// 変更点: readSide が領域セットを受け取れる（ポイント間バナーのピップも同じ形式なので使い回す・highlight.js）。
 // Phase A: 得点HUDからポイント境界とスコアを取る。
 // 座標はすべて 1920x1080 基準。Vision.cropRegion が videoWidth に応じて自動スケールする。
 //
@@ -91,8 +93,8 @@ window.Rally = (() => {
 
   // ---- 片側の得点HUDを読む ----
   // 返り値 { present, mode:'normal'|'deuce', lit, adv, fill, numW }
-  function readSide(video, side) {
-    const cap = Vision.cropRegion(video, side === 'L' ? REGIONS.pipL : REGIONS.pipR);
+  function readSide(video, side, regions = REGIONS) {
+    const cap = Vision.cropRegion(video, side === 'L' ? regions.pipL : regions.pipR);
     const fill = tintFill(cap, side);
 
     const s7 = [];
@@ -112,7 +114,7 @@ window.Rally = (() => {
     // present=true に化ける（2026-09-02 ヘッドレス検証で 7-7 の偽HUDが多発）。実測: 通常0.43〜0.49 / 消灯<0.25
     if (!mode || fill < FILL_MIN) return { present: false, mode: null, lit: 0, adv: false, fill, numW: 0, slots: s7 };
 
-    const num = Vision.cropRegion(video, side === 'L' ? REGIONS.numL : REGIONS.numR);
+    const num = Vision.cropRegion(video, side === 'L' ? regions.numL : regions.numR);
     const numW = numberWidth(num, side);
 
     if (mode === 'normal') {
