@@ -2268,7 +2268,7 @@ $('logToggle').addEventListener('click', () => {
 // ---- バグ報告 ----
 $('bugBtn').addEventListener('click', () => { $('bugmodal').style.display = 'flex'; });
 $('bugClose').addEventListener('click', () => { $('bugmodal').style.display = 'none'; });
-$('bugGithub').addEventListener('click', () => window.api.openExternal('https://github.com/KawasakiKeitoGames/senseki-scan/issues/new'));
+$('bugGithub').addEventListener('click', () => window.api.openExternal('https://github.com/games-desu/senseki-scan/issues/new'));
 $('bugContact').addEventListener('click', () => window.api.openExternal('https://games-desu.vercel.app/'));
 $('bugSave').addEventListener('click', async () => {
   const ver = await window.api.appVersion();

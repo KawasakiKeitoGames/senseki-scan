@@ -33,7 +33,7 @@
     "publish": [
       {
         "provider": "github",
-        "owner": "KawasakiKeitoGames",
+        "owner": "games-desu",
         "repo": "senseki-scan"
       }
     ],

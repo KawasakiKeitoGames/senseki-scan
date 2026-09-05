@@ -68,7 +68,7 @@
   レビューで挙がった整理候補（未対応・v1.0.1には含めない）: nccLen は ncc に長さ引数を足せば1本にできる／ダブルス判定の3条件と中央帯座標が index.html と hl-ui.js に重複／
   SCENE_CACHE のキー生成が2か所／hlUseLast の setInterval 1秒ポーリングはイベント駆動にできる／scanWindow の readFrame が使わない classify/readSide を毎サンプル計算／
   サムネ生成の再シーク／hlRender の innerHTML 全再構築／xfade 連結の三重エンコード＋probe 起動／findBanner の毎フレーム 614KB マスク確保。詳細は 2026-09-05 のセッション
-- 2026-09-05 19:28 に v1.0.1 として発行したが、初公開は 1.0.0 表記にしたいという要望で package.json を 1.0.0 に戻して再ビルド。**v1.0.1 と旧 v1.0.0 は gh release delete --cleanup-tag で削除**し、新ビルドを v1.0.0 として発行（https://github.com/KawasakiKeitoGames/senseki-scan/releases/tag/v1.0.0）。
+- 2026-09-05 19:28 に v1.0.1 として発行したが、初公開は 1.0.0 表記にしたいという要望で package.json を 1.0.0 に戻して再ビルド。**v1.0.1 と旧 v1.0.0 は gh release delete --cleanup-tag で削除**し、新ビルドを v1.0.0 として発行（https://github.com/games-desu/senseki-scan/releases/tag/v1.0.0）。
   注意: 旧 1.0.0 を入れた端末（開発者本人のみ）は同一バージョンのため自動更新されない→手で上書きインストール。今後の改番は 1.0.1 から
 - **「直近の録画で作る」で得点0件になるバグ**: analyze() が SCENE_CACHE に **gateRatings 前**のシーン結果を保存していたため、
   試合中の偽レート窓（砂コート等で30件超出る）が残り、matchWindows が試合開始2秒後に窓を閉じて「0試合・0ポイント」になっていた。
@@ -86,7 +86,7 @@
 ### リリースの回し方（確立済み・2026-08-28）
 - ユーザー: 実ターミナルで `cd C:\Users\iftec\Documents\senseki-capture\app; npm run dist`（NSISはサンドボックス不可）
 - Claude: `gh release create vX.Y.Z` で発行代行（gh CLI認証済み・exe+blockmap+latest.ymlの3点添付・説明欄は1行=1項目で更新ダイアログにそのまま表示される）
-- 公開リポ: https://github.com/KawasakiKeitoGames/senseki-scan ／ 手順詳細は `docs/release.md`
+- 公開リポ: https://github.com/games-desu/senseki-scan ／ 手順詳細は `docs/release.md`
 - **exe/blockmap/latest.ymlは必ず同じビルドから3点同時に上げる**。exeだけ差し替えると
   全ユーザーが `sha512 checksum mismatch` で更新不能になる(v0.3.11で発生・2026-08-30)。
   公開前後に `node tools/verify-release.js [--local]` で照合すること
@@ -373,7 +373,7 @@
 - 退避のやり方: 2GB超は Compress-Archive 不可 → C:/Windows/System32/tar.exe -a -cf Archive/NAME.zip NAME.mp4（mp4は圧縮されないので容器扱い・9本10.8GBで約3分）
 
 ### 残タスク
-- ~~v1.0.0のビルド&発行~~ → **2026-09-05 公開済み**（https://github.com/KawasakiKeitoGames/senseki-scan/releases/tag/v1.0.0）。教訓: package.json の改番はビルド開始前に済ませる（改番中にビルドが走り0.4.0版ができた→再ビルド）
+- ~~v1.0.0のビルド&発行~~ → **2026-09-05 公開済み**（https://github.com/games-desu/senseki-scan/releases/tag/v1.0.0）。教訓: package.json の改番はビルド開始前に済ませる（改番中にビルドが走り0.4.0版ができた→再ビルド）
 - **辞書収穫作戦(進行中)**: ユーザーがdocs/harvest-checklist.mdを見ながらランクマ外で録画→samples/へ→Claudeが目視収穫してチェックリスト更新・コミット(確立済み運用2026-08-30)。
   **2026-09-05 ほぼ完了**: 残りはノコノコ:黄(VS/パネル)のみ。色違い僅差のフラグは立てない方針(ユーザー判断)・背景除外は実装済み
 - v0.3.9のビルド&発行(FV帰属刷新)

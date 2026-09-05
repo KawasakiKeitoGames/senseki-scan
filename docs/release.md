@@ -2,11 +2,11 @@
 
 アプリは起動時に GitHub Releases の `latest.yml` を確認し、新版があればバックグラウンドでDL→
 **アプリを閉じたときに自動適用**する（electron-updater / `app/main.js`）。
-配信元は `app/package.json` の `build.publish` = `KawasakiKeitoGames/senseki-scan`。
+配信元は `app/package.json` の `build.publish` = `games-desu/senseki-scan`。
 
 ## 初回だけの準備
 
-1. ~~GitHub に公開リポジトリ senseki-scan を作る~~ → **作成済み(2026-08-27)** https://github.com/KawasakiKeitoGames/senseki-scan
+1. ~~GitHub に公開リポジトリ senseki-scan を作る~~ → **作成済み(2026-08-27)** https://github.com/games-desu/senseki-scan
    - **public 必須**。electron-updater はトークンなしで latest.yml を読むため、私有リポだと全ユーザーが更新確認に失敗する。
    - ソースを置きたくなければ**空のままでよい**（Releases だけ使う）。README 1枚でも可。
 2. Personal Access Token を作る（Settings → Developer settings → Tokens (classic) → `repo` スコープ）。

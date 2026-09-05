@@ -11,7 +11,7 @@ CSVを作る Windows 用アプリです。**解析はすべてお使いのPC内�
 
 ## インストール
 
-1. [Releases ページ](https://github.com/KawasakiKeitoGames/senseki-scan/releases/latest) から
+1. [Releases ページ](https://github.com/games-desu/senseki-scan/releases/latest) から
    `SENSEKI-SCAN-Setup-<バージョン>.exe` をダウンロード
 2. **ダウンロード時にブラウザの警告が出ることがあります**（「〇〇は一般的にダウンロードされていません」等）。
    - Edge: ダウンロード一覧でファイルにマウスを乗せる → 「…」メニュー → **「保持する」** → 「詳細表示」→ **「保持する」**

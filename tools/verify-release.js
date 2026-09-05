@@ -13,7 +13,7 @@ const https = require('https');
 const zlib = require('zlib');
 const crypto = require('crypto');
 
-const REPO = 'KawasakiKeitoGames/senseki-scan';
+const REPO = 'games-desu/senseki-scan';
 const APP_DIR = path.join(__dirname, '..', 'app');
 const DIST_DIR = path.join(APP_DIR, 'dist');
 const sha512b64 = buf => crypto.createHash('sha512').update(buf).digest('base64');

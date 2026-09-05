@@ -5,7 +5,7 @@ SENSEKI FEVER の CSV 一括登録フォーマットで出力する Windows ロ�
 
 ## ダウンロード（利用者向け）
 
-- **[最新版をダウンロード](https://github.com/KawasakiKeitoGames/senseki-scan/releases/latest)**（`SENSEKI-SCAN-Setup-<バージョン>.exe`）
+- **[最新版をダウンロード](https://github.com/games-desu/senseki-scan/releases/latest)**（`SENSEKI-SCAN-Setup-<バージョン>.exe`）
 - インストール手順・使い方 → **[利用マニュアル](docs/manual.md)**
 - 以下は開発者向けの情報です
 
